@@ -42,3 +42,40 @@ Notes:
 - Inside a container, the visible CPUs might be limited by cpusets. The script will respect whatever CPUs it can see.
 - Use a heatsink, fan, or at least a martyr’s patience. The i.MX8M Mini will throttle when it gets hot—this is expected behavior during testing.
 
+# Running the GUI Version
+
+## Run it on your Verdin under Weston
+
+Inside your Weston container (if needed):
+
+```bash
+export XDG_RUNTIME_DIR=/tmp/1000-runtime-dir
+export WAYLAND_DISPLAY=wayland-0
+```
+
+Then run:
+
+```bash
+python3 burn_cores_gui.py --fullscreen --start-burn --interval 0.3
+```
+
+## What You Get
+
+- Big, readable per-CPU bars with heat coloring from green → red as utilization climbs
+- Temperature bars for CPU/SOC sensors that go red as the silicon heats up
+- Live load averages and current worker count
+- Controls:
+  - `Space` → Toggle the burn without closing the overlay  
+  - `+ / -` → Adjust the number of workers  
+  - `Esc` → Quit
+
+## Notes
+
+- If your container is missing **`python3-gi`**, **`gir1.2-gtk-3.0`**, or **`python3-cairo`**, install them in the image.
+- If your thermal or `cpufreq` sysfs isn’t exposed, those fields will just show **“n/a”** instead of crashing.
+
+---
+
+There: pretty graphs while you set the Mini on fire.  
+(But try not to annihilate the poor dual-core just to feel something.)
+
