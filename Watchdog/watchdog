@@ -1,0 +1,87 @@
+#!/usr/bin/env bash
+# ds1374ctl - quick control of DS1374U-18 watchdog over I2C
+# Usage:
+#   ds1374ctl disable        # zero counter, clear WACE/AIE, clear flags
+#   ds1374ctl enable         # set WACE, leaves counter at 0 (no WD pulse until you set it)
+#   ds1374ctl status         # print key regs
+# Options:
+#   -b <bus>                 # force I2C bus number (e.g. -b 1)
+#   -a <addr>                # I2C address (default 0x68)
+
+set -euo pipefail
+
+ADDR="0x68"
+BUS=""
+ACTION=""
+
+die(){ echo "Error: $*" >&2; exit 1; }
+have(){ command -v "$1" >/dev/null 2>&1; }
+
+# Require i2c-tools
+for t in i2cdetect i2cget i2cset i2ctransfer; do
+  have "$t" || die "Missing $t. Install i2c-tools."
+done
+
+# Parse args
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    -b) BUS="${2:-}"; shift 2;;
+    -a) ADDR="${2:-}"; shift 2;;
+    disable|enable|status) ACTION="$1"; shift;;
+    *) die "Unknown arg: $1";;
+  esac
+done
+[[ -n "${ACTION:-}" ]] || die "No action. Use: disable | enable | status"
+
+# Auto-detect bus if not given
+autobus(){
+  while read -r line; do
+    num=$(awk '{print $1}' <<<"$line" | sed 's/i2c-//')
+    if i2cdetect -y "$num" | grep -qw "$(printf '%02x' $((ADDR)))" 2>/dev/null; then
+      echo "$num"; return 0
+    fi
+  done < <(i2cdetect -l | awk '{print $1}')
+  return 1
+}
+
+if [[ -z "${BUS:-}" ]]; then
+  BUS="$(autobus)" || die "Could not find device at $ADDR on any bus. Use -b <bus>."
+fi
+
+# Helpers
+rg(){ i2cget -y "$BUS" "$ADDR" "$1"; }
+wr(){ i2cset -y "$BUS" "$ADDR" "$1" "$2"; }
+
+disable(){
+  # Zero WD/ALM counter (0x04..0x06), clear control bits WACE/AIE, clear status flags
+  i2ctransfer -y "$BUS" w4@"$ADDR" 0x04 0x00 0x00 0x00
+  wr 0x07 0x00
+  wr 0x08 0x00
+  echo "DS1374 watchdog disabled on i2c-$BUS @ $ADDR."
+}
+
+enable(){
+  # Read-modify-write Control (0x07): set WACE (bit6). Leave other bits as-is.
+  old=$(rg 0x07)
+  old_dec=$((16#${old#0x}))
+  new_dec=$((old_dec | 0x40))   # set bit6
+  wr 0x07 $(printf "0x%02x" "$new_dec")
+  echo "DS1374 watchdog block enabled (WACE=1) on i2c-$BUS @ $ADDR."
+  echo "Note: Counter is 0x000000. Program 0x04..0x06 if you actually want a timeout."
+}
+
+status(){
+  cr=$(rg 0x07)
+  sr=$(rg 0x08)
+  c0=$(rg 0x04); c1=$(rg 0x05); c2=$(rg 0x06)
+  echo "Bus: i2c-$BUS  Addr: $ADDR"
+  echo "Control (0x07): $cr   [WACE bit6: $(( (16#${cr#0x} & 0x40) != 0 ? 1 : 0 ))]"
+  echo "Status  (0x08): $sr   [AF bit0:   $(( (16#${sr#0x} & 0x01) != 0 ? 1 : 0 ))]"
+  echo "Counter 0x04..0x06: $c0 $c1 $c2"
+}
+
+case "$ACTION" in
+  disable) disable;;
+  enable)  enable;;
+  status)  status;;
+esac
