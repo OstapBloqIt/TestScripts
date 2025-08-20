@@ -71,7 +71,7 @@ python3 burn_cores_gui.py --fullscreen --start-burn --interval 0.3
 
 ## Notes
 
-- If your container is missing **`python3-gi`**, **`gir1.2-gtk-3.0`**, or **`python3-cairo`**, install them in the image.
+- If your container is missing **`python3-gi`**, **`gir1.2-gtk-3.0`**, **`python3-gi-cairo`** or **`python3-cairo`**, install them in the image.
 - If your thermal or `cpufreq` sysfs isn’t exposed, those fields will just show **“n/a”** instead of crashing.
 
 ---
