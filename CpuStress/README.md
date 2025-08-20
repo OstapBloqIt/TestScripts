@@ -56,7 +56,7 @@ export WAYLAND_DISPLAY=wayland-0
 Then run:
 
 ```bash
-python3 burn_cores_gui.py --fullscreen --start-burn --interval 0.3
+python3 burn_cores_gui.py --start-burn --log-auto --workers 8 --pin-extras
 ```
 
 ## What You Get
