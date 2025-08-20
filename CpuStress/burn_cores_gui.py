@@ -1,4 +1,3 @@
-oot@verdin-imx8mm-15692634:/home/tests# cat burn_cores_gui.py
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
