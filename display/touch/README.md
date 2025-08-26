@@ -190,6 +190,9 @@ Mount a host directory to capture CSVs:
 
 - GTK/Cairo import errors like “Couldn’t find foreign struct converter for 'cairo.Context'”
   - Make sure python3-gi, gir1.2-gtk-3.0, and python3-cairo are installed in the image.
+apt-get update
+apt-get install -y python3-gi python3-gi-cairo gir1.2-gtk-3.0 python3-cairo
+
 
 - No input shows up in evdev tool
   - Verify the correct /dev/input/eventX.
