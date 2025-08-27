@@ -21,6 +21,7 @@ Use a Wayland-capable base with GTK3, Cairo, and PyGObject. Example Dockerfile:
 
     # System deps
     RUN apt-get update && apt-get install -y --no-install-recommends \
+        python3-gi \
         python3 python3-pip \
         python3-gi gir1.2-gtk-3.0 \
         python3-cairo \
