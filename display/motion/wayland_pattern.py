@@ -9,7 +9,7 @@ gi.require_version("Gtk", "3.0")
 from gi.repository import Gtk, Gdk, GLib
 
 parser = argparse.ArgumentParser(description="Fullscreen moving test pattern with FPS.")
-parser.add_argument("--pattern", choices=["bars","checker","gradient","solid-red","solid-green","solid-blue"],
+parser.add_argument("--pattern", choices=["bars","checker","gradient","solid-red","solid-green","solid-blue","white"],
                     default="bars")
 parser.add_argument("--speed", type=float, default=120.0, help="pixels per second")
 parser.add_argument("--fps", type=int, default=60, help="target frame rate")
@@ -85,6 +85,9 @@ class PatternWindow(Gtk.Window):
             self.fill(cr, w, h, (0,1,0))
         elif self.pattern == "solid-blue":
             self.fill(cr, w, h, (0,0,1))
+        elif self.pattern == "white":
+            self.fill(cr, w, h, (1,1,1))
+
 
         # fps overlay (top-left)
         self.draw_fps(cr, w, h)
