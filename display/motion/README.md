@@ -27,6 +27,7 @@ The runner container (where you execute the script) needs:
 - PyGObject and Cairo bindings
 
 Debian packages (install in your runner container):
+
     apt-get update && apt-get install -y \
     python3 python3-gi python3-gi-cairo python3-cairo gir1.2-gtk-3.0 && \
     apt-get clean
