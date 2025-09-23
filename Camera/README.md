@@ -33,10 +33,12 @@ apt update && apt install -y \
     python3-dev \
     python3-gi \
     python3-gi-cairo \
+    python3-pandas \
+    python3-openpyxl \
+    python3-pygame \
     gir1.2-gtk-3.0 \
-    gir1.2-gst-1.0 \
-    gir1.2-gstapp-1.0 \
-    gir1.2-gstvideo-1.0 \
+    gir1.2-gstreamer-1.0 \
+    gir1.2-gst-plugins-base-1.0 \
     gstreamer1.0-tools \
     gstreamer1.0-plugins-base \
     gstreamer1.0-plugins-good \
@@ -52,7 +54,8 @@ apt update && apt install -y \
     pkg-config \
     build-essential
 
-pip3 install pandas openpyxl pygame
+# If system packages not available, use pip with override
+pip3 install pandas openpyxl pygame --break-system-packages
 ```
 
 **Minimal installation for console app only:**
@@ -61,7 +64,9 @@ apt update && apt install -y \
     python3 \
     python3-pip \
     python3-gi \
-    gir1.2-gst-1.0 \
+    python3-pandas \
+    python3-openpyxl \
+    gir1.2-gstreamer-1.0 \
     gstreamer1.0-tools \
     gstreamer1.0-plugins-base \
     gstreamer1.0-plugins-good \
@@ -70,7 +75,8 @@ apt update && apt install -y \
     gstreamer1.0-libav \
     v4l-utils
 
-pip3 install pandas openpyxl
+# If system packages not available, use pip with override
+pip3 install pandas openpyxl --break-system-packages
 ```
 
 ### 2. Run the Console Camera Analyzer (Recommended)
