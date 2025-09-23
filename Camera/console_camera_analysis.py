@@ -42,7 +42,7 @@ class ConsoleCameraAnalyzer:
         # Analysis settings
         self.recording_duration = 15  # seconds
         self.wait_duration = 16  # seconds
-        self.temp_dir = "temp_analysis"
+        self.temp_dir = "/var/rootdirs/media/6333-3730"  # SD card storage
         self.output_excel = "console_camera_analysis.xlsx"
 
         # Analysis state
@@ -66,7 +66,7 @@ class ConsoleCameraAnalyzer:
             sys.exit(1)
 
         print(f"\n✅ Ready to analyze {self.total_combinations} combinations")
-        print(f"📁 Temporary files: {self.temp_dir}")
+        print(f"💾 Video files saved to: {self.temp_dir}")
         print(f"📊 Output Excel: {self.output_excel}")
 
     def parse_v4l2_output(self, device_path):
@@ -156,13 +156,19 @@ class ConsoleCameraAnalyzer:
         print(f"🎯 Total combinations to test: {self.total_combinations}")
 
     def create_temp_directory(self):
-        """Create temporary directory for test recordings"""
+        """Ensure SD card directory exists for video storage"""
         try:
             if not os.path.exists(self.temp_dir):
                 os.makedirs(self.temp_dir)
-                print(f"📁 Created temporary directory: {self.temp_dir}")
+                print(f"📁 Created video storage directory: {self.temp_dir}")
+            else:
+                print(f"📁 Using existing video storage directory: {self.temp_dir}")
         except Exception as e:
-            print(f"❌ Error creating temp directory: {e}")
+            print(f"❌ Error accessing SD card directory: {e}")
+            print(f"⚠️  Falling back to local storage")
+            self.temp_dir = "temp_analysis"
+            if not os.path.exists(self.temp_dir):
+                os.makedirs(self.temp_dir)
 
     def show_device_summary(self):
         """Show a summary of detected devices"""
@@ -395,17 +401,16 @@ class ConsoleCameraAnalyzer:
                     bitrate_bps = bits / self.recording_duration
                     bitrate_kbps = bitrate_bps / 1000
 
-                    print(f"\n   ✅ Success: {file_size_mb:.2f} MB, {bitrate_kbps:.1f} kbps", flush=True)
+                    print(f"\n   ✅ Success: {file_size_mb:.2f} MB, {bitrate_kbps:.1f} kbps - Saved to SD card", flush=True)
                     self.record_test_result(True, file_size_mb, bitrate_kbps)
                 else:
                     print(f"\n   ❌ Failed: File too small ({file_size} bytes)", flush=True)
                     self.record_test_result(False, 0, 0)
-
-                # Always delete the file to save space
-                try:
-                    os.remove(output_file)
-                except:
-                    pass
+                    # Delete failed files to save space
+                    try:
+                        os.remove(output_file)
+                    except:
+                        pass
 
             else:
                 print(f"\n   ❌ Failed: File not created", flush=True)
@@ -459,10 +464,10 @@ class ConsoleCameraAnalyzer:
         # Show summary
         self.show_results_summary()
 
-        # Cleanup temp directory
+        # Show final file count on SD card
         try:
-            os.rmdir(self.temp_dir)
-            print(f"🗑️  Cleaned up temporary directory")
+            video_files = len([f for f in os.listdir(self.temp_dir) if f.endswith(('.mp4', '.avi'))])
+            print(f"💾 {video_files} video files saved to SD card: {self.temp_dir}")
         except:
             pass
 
