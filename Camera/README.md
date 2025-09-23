@@ -1,77 +1,166 @@
-# Wayland Touch Camera Viewer for Verdin i.MX8M Mini
+# USB Camera Touch Viewer for Verdin iMX8M Mini
 
-A touch‑first USB camera viewer designed for embedded Linux (Toradex Verdin i.MX8M Mini) running in a Docker container with a Weston Wayland compositor. The app provides an on‑screen interface to view, control, and monitor a USB camera.
+A touch-enabled camera application designed for the Verdin iMX8M Mini with Wayland compositor support. Features real-time video display with comprehensive touch controls for resolution, frame rate, and system monitoring.
 
 ## Features
-- **Touch controls only** (no keyboard required)
-- **Resolution presets**: from 320×240 up to 1920×1080
-- **Frame rate control**: 0–60 fps (0 pauses the stream)
-- **On‑screen controls**: play/pause, apply settings, exit
-- **Live resource monitor**: CPU and RAM usage
-- **Wayland‑native rendering** using GTK4 + GStreamer `gtksink`
+- **Touch-First Interface**: Optimized for touchscreen interaction with large buttons and intuitive controls
+- **Resolution Control**: Support for resolutions from 320x240 to 1920x1080
+- **Frame Rate Adjustment**: Variable frame rate from 0-60 fps with real-time slider control
+- **System Monitoring**: Live CPU and memory usage display
+- **Full-Screen Display**: Automatic fullscreen mode for immersive viewing
+- **Wayland Compatible**: Native support for Wayland compositor with fallback rendering
 
-## Requirements
-Make sure the following are available inside the container:
-- Python 3
-- `python3-gi`, `gir1.2-gtk-4.0`, `gir1.2-gst-1.0`
-- GStreamer: `gstreamer1.0-plugins-base`, `gstreamer1.0-plugins-good`, `gstreamer1.0-plugins-bad`, (`gstreamer1.0-libav` optional)
-- `v4l-utils` (optional, for camera info)
+## System Requirements
+- Verdin iMX8M Mini (or compatible ARM/x86 Linux system)
+- USB camera (UVC compatible)
+- Wayland compositor (Weston recommended)
+- Display with MIPI-DSI output and DSI-LVDS bridge support
+- Touchscreen input device
 
-## Files
-- `touch_cam.py`: Main application
-- `Dockerfile`: Build instructions for the container
-- `docker-compose.yml`: Example service configuration
+## Dependencies Installation
 
-## Building
-```bash
-docker build -t touch-cam .
-```
-
-## Running
-Run the container with access to the Wayland socket and your USB camera device:
+### Ubuntu/Debian Systems
 
 ```bash
-docker run --rm \
-  -e WAYLAND_DISPLAY=wayland-0 \
-  -e CAM_DEVICE=/dev/video0 \
-  -v /tmp/wayland-0:/tmp/wayland-0 \
-  --device /dev/video0 \
-  touch-cam
+# Update package list
+sudo apt update
+
+# Install Python 3 and pip
+sudo apt install python3 python3-pip
+
+# Install GTK4 and GObject Introspection
+sudo apt install libgtk-4-1 libgtk-4-dev gobject-introspection libgirepository1.0-dev
+
+# Install GStreamer and plugins
+sudo apt install gstreamer1.0-tools gstreamer1.0-plugins-base gstreamer1.0-plugins-good gstreamer1.0-plugins-bad gstreamer1.0-plugins-ugly
+
+# Install GStreamer development libraries
+sudo apt install libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev
+
+# Install Video4Linux utilities (optional, for camera testing)
+sudo apt install v4l-utils
+
+# Install Python GI bindings
+sudo apt install python3-gi python3-gi-cairo gir1.2-gtk-4.0 gir1.2-gstreamer-1.0
+
+# For OpenCV-based testing (camera.py)
+sudo apt install python3-opencv
 ```
 
-Or use `docker-compose`:
-```yaml
-services:
-  touch-cam:
-    build: .
-    environment:
-      - WAYLAND_DISPLAY=wayland-0
-      - CAM_DEVICE=/dev/video0
-    devices:
-      - "/dev/video0:/dev/video0"
-    volumes:
-      - "/tmp/wayland-0:/tmp/wayland-0"
-    network_mode: "host"
-    ipc: "host"
-    restart: unless-stopped
-```
-Run with:
+### Additional Dependencies for ARM/Embedded Systems
+
 ```bash
-docker compose up --build
+# GPU drivers and Wayland support
+sudo apt install mesa-utils-extra libwayland-egl1 libwayland-client0 libwayland-server0
+
+# Hardware acceleration support
+sudo apt install gstreamer1.0-vaapi gstreamer1.0-libav
 ```
 
 ## Usage
-- Select resolution from the dropdown.
-- Adjust frame rate with the slider.
-- Press **Apply** to restart the pipeline with new settings.
-- Use **Pause/Play** to toggle streaming.
-- **Exit** closes the app.
-- CPU and RAM usage are displayed in real time.
 
-## Notes
-- The app defaults to `/dev/video0`. Override with `CAM_DEVICE` environment variable.
-- If `gtksink` is missing, it will fall back to `autovideosink` (not embeddable inside the UI).
-- Some cameras may only support MJPG/YUYV at specific resolutions. If needed, add decoders into the pipeline.
+### Running the Touch Camera Application
 
-## License
-MIT License
+```bash
+python3 waylan_camera.py
+```
+
+### Environment Variables
+
+- `CAM_DEVICE`: Specify camera device (default: `/dev/video0`)
+  ```bash
+  CAM_DEVICE=/dev/video1 python3 waylan_camera.py
+  ```
+
+### Controls
+
+- **Resolution Dropdown**: Select from predefined resolutions (320x240 to 1920x1080)
+- **FPS Slider**: Adjust frame rate from 0-60 fps
+- **Pause/Play Button**: Toggle video stream
+- **Apply Button**: Apply resolution/fps changes
+- **Exit Button**: Close application
+- **Resource Monitor**: Real-time CPU and memory usage display
+
+## Camera Device Detection
+
+To find available camera devices:
+
+```bash
+# List video devices
+ls /dev/video*
+
+# Get camera capabilities
+v4l2-ctl --list-devices
+v4l2-ctl --device=/dev/video0 --list-formats-ext
+```
+
+## Troubleshooting
+
+### Camera Not Detected
+```bash
+# Check if camera is recognized
+lsusb | grep -i camera
+dmesg | grep -i video
+```
+
+### GStreamer Issues
+```bash
+# Test GStreamer pipeline manually
+gst-launch-1.0 v4l2src device=/dev/video0 ! videoconvert ! autovideosink
+
+# Check available GStreamer plugins
+gst-inspect-1.0 | grep v4l2
+```
+
+### Permission Issues
+```bash
+# Add user to video group
+sudo usermod -a -G video $USER
+# Logout and login again
+```
+
+### Wayland Display Issues
+```bash
+# Ensure Wayland socket is available
+echo $WAYLAND_DISPLAY
+ls -la $XDG_RUNTIME_DIR/$WAYLAND_DISPLAY
+```
+
+## Docker/Container Usage
+
+If running in a container, ensure these mounts and permissions:
+
+```yaml
+# docker-compose.yml example
+services:
+  camera-app:
+    volumes:
+      - /dev/video0:/dev/video0
+      - /run/user/1000:/run/user/1000
+    environment:
+      - WAYLAND_DISPLAY=wayland-0
+      - XDG_RUNTIME_DIR=/run/user/1000
+    devices:
+      - /dev/video0:/dev/video0
+    privileged: true
+```
+
+## File Structure
+
+- `waylan_camera.py` - Main touch-enabled camera application
+- `camera.py` - Simple OpenCV camera test script
+- `README.md` - This documentation
+
+## Hardware Notes
+
+- Tested on Verdin iMX8M Mini with Weston compositor
+- Supports MIPI-DSI displays via DSI-LVDS bridge
+- UVC-compatible USB cameras recommended
+- Touch input automatically detected by GTK4
+
+## Performance Optimization
+
+- Uses Cairo renderer fallback for stability on embedded GPUs
+- Hardware-accelerated video decode when available
+- Efficient CPU/memory monitoring with minimal overhead
+- Optimized for ARM Cortex-A53 architecture
