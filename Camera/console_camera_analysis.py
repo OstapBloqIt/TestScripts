@@ -43,7 +43,7 @@ class ConsoleCameraAnalyzer:
         self.recording_duration = 15  # seconds
         self.wait_duration = 16  # seconds
         self.temp_dir = "/var/rootdirs/media/6333-3730"  # SD card storage
-        self.output_excel = "console_camera_analysis.xlsx"
+        self.output_excel = self.get_output_filename()  # Interactive filename selection
 
         # Analysis state
         self.video_devices = []
@@ -68,6 +68,106 @@ class ConsoleCameraAnalyzer:
         print(f"\n✅ Ready to analyze {self.total_combinations} combinations")
         print(f"💾 Video files saved to: {self.temp_dir}")
         print(f"📊 Output Excel: {self.output_excel}")
+
+    def get_output_filename(self):
+        """Get Excel output filename with interactive editing"""
+        print("\n" + "=" * 50)
+        print("📊 EXCEL OUTPUT FILENAME")
+        print("=" * 50)
+
+        # Generate default filename with timestamp
+        timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+        default_filename = f"camera_analysis_{timestamp}.xlsx"
+
+        # Check for existing files and suggest alternatives
+        counter = 1
+        original_default = default_filename
+        while os.path.exists(default_filename):
+            base = original_default.replace('.xlsx', '')
+            default_filename = f"{base}_v{counter}.xlsx"
+            counter += 1
+
+        print(f"📁 Current directory: {os.getcwd()}")
+
+        # Show existing Excel files if any
+        existing_files = [f for f in os.listdir('.') if f.endswith('.xlsx')]
+        if existing_files:
+            print(f"📋 Existing Excel files in directory:")
+            for i, file in enumerate(existing_files[-5:], 1):  # Show last 5 files
+                try:
+                    size_mb = os.path.getsize(file) / (1024 * 1024)
+                    mtime = os.path.getmtime(file)
+                    date_str = datetime.fromtimestamp(mtime).strftime("%Y-%m-%d %H:%M")
+                    print(f"   {i}. {file} ({size_mb:.1f} MB, {date_str})")
+                except:
+                    print(f"   {i}. {file}")
+            if len(existing_files) > 5:
+                print(f"   ... and {len(existing_files) - 5} more files")
+
+        print(f"\n💡 Suggested filename: {default_filename}")
+
+        while True:
+            try:
+                # Use readline for better editing experience if available
+                try:
+                    import readline
+                    # Pre-fill the input with default filename
+                    def startup_hook():
+                        readline.insert_text(default_filename)
+                        readline.redisplay()
+                    readline.set_startup_hook(startup_hook)
+
+                    filename = input("✏️  Enter Excel filename (edit as needed): ")
+                    readline.set_startup_hook()  # Clear the hook
+
+                except ImportError:
+                    # Fallback without readline
+                    print(f"✏️  Default: {default_filename}")
+                    filename = input("✏️  Enter Excel filename (or press Enter for default): ").strip()
+                    if not filename:
+                        filename = default_filename
+
+                # Ensure .xlsx extension
+                if not filename.lower().endswith('.xlsx'):
+                    filename += '.xlsx'
+
+                # Validate filename
+                if not filename.replace('.xlsx', '').strip():
+                    print("❌ Filename cannot be empty!")
+                    continue
+
+                # Check for invalid characters
+                invalid_chars = '<>:"/\\|?*'
+                if any(char in filename for char in invalid_chars):
+                    print(f"❌ Filename contains invalid characters: {invalid_chars}")
+                    continue
+
+                # Check if file exists and ask for confirmation
+                if os.path.exists(filename):
+                    try:
+                        size_mb = os.path.getsize(filename) / (1024 * 1024)
+                        mtime = os.path.getmtime(filename)
+                        date_str = datetime.fromtimestamp(mtime).strftime("%Y-%m-%d %H:%M")
+                        print(f"⚠️  File exists: {filename} ({size_mb:.1f} MB, created {date_str})")
+                    except:
+                        print(f"⚠️  File exists: {filename}")
+
+                    overwrite = input("🤔 Overwrite existing file? (y/N): ").strip().lower()
+                    if overwrite not in ['y', 'yes']:
+                        print("💡 Please choose a different filename.")
+                        continue
+
+                print(f"✅ Excel output will be saved as: {filename}")
+                return filename
+
+            except KeyboardInterrupt:
+                print("\n❌ Filename selection cancelled.")
+                print("🔄 Using default filename...")
+                return default_filename
+            except Exception as e:
+                print(f"❌ Error with filename input: {e}")
+                print("🔄 Using default filename...")
+                return default_filename
 
     def parse_v4l2_output(self, device_path):
         """Parse v4l2-ctl output to extract real device capabilities"""
