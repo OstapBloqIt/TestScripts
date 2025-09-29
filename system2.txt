@@ -1,0 +1,51 @@
+ System Environment Context for LLM Prompts
+
+  Hardware & Platform
+
+  - Device: iMX8M Mini Verdin SoM on carrier board
+  - Architecture: ARM64 (aarch64)
+  - Display: 800x1280 portrait orientation, touch-enabled (no mouse/keyboard)
+  - OS: Torizon Core 6.8.1 (Debian-based container), Linux 5.15.148
+  - User: Running as root in Docker container, working directory /home/torizon/
+
+  Graphics & Display Stack
+
+  - Compositor: Weston (Wayland)
+  - GPU: iMX Vivante with imx-gpu-viv-wayland drivers
+  - Working graphics frameworks: GTK3, web browsers (Chromium), terminal apps
+  - Broken graphics frameworks: SDL2 (causes bus errors), direct framebuffer access
+  - OpenGL/EGL: Development headers unavailable due to GPU driver package conflicts
+
+  Development Environment
+
+  - Compilers: gcc, standard C toolchain available
+  - Package manager: apt (Debian packages)
+  - Python: Python 3 available
+  - Web serving: python3 -m http.server works for local development
+  - Browser: Chromium with specific flags for kiosk mode applications
+
+  Key Constraints & Limitations
+
+  - SDL2: Completely unusable - causes bus errors and crashes
+  - OpenGL/EGL dev packages: Cannot install due to GPU driver conflicts
+  - Direct framebuffer: Not visible due to Wayland compositor control
+  - Input: Touch-only interface, design for portrait 800x1280 resolution
+  - System services: Limited container environment, no systemctl access
+
+  Recommended Development Approaches
+
+  1. GTK3 applications: apt install libgtk-3-dev, compile with pkg-config --cflags --libs gtk+-3.0
+  2. Web applications: HTML/CSS/JS served via HTTP, launched in Chromium kiosk mode
+  3. Terminal applications: Always work reliably
+
+  Sample Working Commands
+
+  # GTK3 app development
+  apt install libgtk-3-dev
+  gcc app.c -o app `pkg-config --cflags --libs gtk+-3.0`
+  DISPLAY=:0 ./app
+
+  # Web app development
+  python3 -m http.server 8000 --bind 127.0.0.1 &
+  DISPLAY=:0 chromium --kiosk --no-sandbox --disable-dev-shm-usage \
+  --disable-gpu --use-fake-ui-for-media-stream http://127.0.0.1:8000/app.html &
