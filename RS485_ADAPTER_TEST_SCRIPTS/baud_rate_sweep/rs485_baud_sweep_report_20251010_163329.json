@@ -1,0 +1,104 @@
+{
+  "test_info": {
+    "start_time": "2025-10-10T16:33:29.233287",
+    "end_time": "2025-10-10T16:34:00.297416",
+    "duration_seconds": 31.064129,
+    "port": "COM5",
+    "timeout": 2.0,
+    "messages_per_baud_rate": 100,
+    "baud_rates_tested": [
+      9600,
+      19200,
+      38400,
+      57600,
+      115200
+    ]
+  },
+  "summary": {
+    "total_baud_rates": 5,
+    "total_messages_sent": 500,
+    "overall_success_rate": 100.0,
+    "best_baud_rate": {
+      "rate": 9600,
+      "success_rate": 100.0,
+      "ber": 0.0
+    },
+    "worst_baud_rate": {
+      "rate": 0,
+      "success_rate": 100.0,
+      "ber": 0.0
+    }
+  },
+  "detailed_results": [
+    {
+      "baud_rate": 9600,
+      "timestamp": "2025-10-10T16:33:30.256022",
+      "total_messages": 100,
+      "successful_messages": 100,
+      "failed_messages": 0,
+      "timeout_errors": 0,
+      "bit_errors": 0,
+      "total_bits": 0,
+      "ber": 0.0,
+      "success_rate": 100.0,
+      "average_response_time": 0.08516617059707642,
+      "errors": []
+    },
+    {
+      "baud_rate": 19200,
+      "timestamp": "2025-10-10T16:33:40.867145",
+      "total_messages": 100,
+      "successful_messages": 100,
+      "failed_messages": 0,
+      "timeout_errors": 0,
+      "bit_errors": 0,
+      "total_bits": 0,
+      "ber": 0.0,
+      "success_rate": 100.0,
+      "average_response_time": 0.05305635929107666,
+      "errors": []
+    },
+    {
+      "baud_rate": 38400,
+      "timestamp": "2025-10-10T16:33:48.258017",
+      "total_messages": 100,
+      "successful_messages": 100,
+      "failed_messages": 0,
+      "timeout_errors": 0,
+      "bit_errors": 0,
+      "total_bits": 0,
+      "ber": 0.0,
+      "success_rate": 100.0,
+      "average_response_time": 0.021500377655029296,
+      "errors": []
+    },
+    {
+      "baud_rate": 57600,
+      "timestamp": "2025-10-10T16:33:52.497837",
+      "total_messages": 100,
+      "successful_messages": 100,
+      "failed_messages": 0,
+      "timeout_errors": 0,
+      "bit_errors": 0,
+      "total_bits": 0,
+      "ber": 0.0,
+      "success_rate": 100.0,
+      "average_response_time": 0.021164376735687256,
+      "errors": []
+    },
+    {
+      "baud_rate": 115200,
+      "timestamp": "2025-10-10T16:33:56.697800",
+      "total_messages": 100,
+      "successful_messages": 100,
+      "failed_messages": 0,
+      "timeout_errors": 0,
+      "bit_errors": 0,
+      "total_bits": 0,
+      "ber": 0.0,
+      "success_rate": 100.0,
+      "average_response_time": 0.021065356731414794,
+      "errors": []
+    }
+  ]
+}

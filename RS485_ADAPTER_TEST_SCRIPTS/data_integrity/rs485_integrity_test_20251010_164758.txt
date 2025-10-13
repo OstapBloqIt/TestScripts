@@ -1,0 +1,140 @@
+======================================================================
+RS485 Data Integrity Test Report
+======================================================================
+Test Date:            2025-10-10T16:47:58.980280
+COM Port:             COM5
+Baud Rate:            9600 bps
+Total Tests:          8
+Tests Passed:         6
+Tests Failed:         2
+Total Bytes Sent:     8000
+Total Bytes Received: 10
+Total Bit Errors:     17
+Total Byte Errors:    9
+======================================================================
+
+Individual Test Results:
+======================================================================
+
+Test 1: SEQUENTIAL
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   0
+  Bit Errors:       0
+  Byte Errors:      0
+  Bit Error Rate:   0.000000000%
+  Byte Error Rate:  0.000000%
+  Test Duration:    11.97 seconds
+  Throughput:       0.00 bps
+  Status:           PASS
+
+Test 2: ALTERNATING
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   0
+  Bit Errors:       0
+  Byte Errors:      0
+  Bit Error Rate:   0.000000000%
+  Byte Error Rate:  0.000000%
+  Test Duration:    11.97 seconds
+  Throughput:       0.00 bps
+  Status:           PASS
+
+Test 3: ALL_ZEROS
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   0
+  Bit Errors:       0
+  Byte Errors:      0
+  Bit Error Rate:   0.000000000%
+  Byte Error Rate:  0.000000%
+  Test Duration:    11.97 seconds
+  Throughput:       0.00 bps
+  Status:           PASS
+
+Test 4: ALL_ONES
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   0
+  Bit Errors:       0
+  Byte Errors:      0
+  Bit Error Rate:   0.000000000%
+  Byte Error Rate:  0.000000%
+  Test Duration:    11.97 seconds
+  Throughput:       0.00 bps
+  Status:           PASS
+
+Test 5: RANDOM
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   0
+  Bit Errors:       0
+  Byte Errors:      0
+  Bit Error Rate:   0.000000000%
+  Byte Error Rate:  0.000000%
+  Test Duration:    11.97 seconds
+  Throughput:       0.00 bps
+  Status:           PASS
+  Seed:             12345
+
+Test 6: WALKING_ONES
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   0
+  Bit Errors:       0
+  Byte Errors:      0
+  Bit Error Rate:   0.000000000%
+  Byte Error Rate:  0.000000%
+  Test Duration:    11.98 seconds
+  Throughput:       0.00 bps
+  Status:           PASS
+
+Test 7: WALKING_ZEROS
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   6
+  Bit Errors:       7
+  Byte Errors:      6
+  Bit Error Rate:   14.583333333%
+  Byte Error Rate:  100.000000%
+  Test Duration:    11.97 seconds
+  Throughput:       4.01 bps
+  Status:           FAIL
+
+  First Errors (up to 10):
+    [0000] Sent: 0xFE, Received: 0xFF, Bits wrong: 1
+    [0001] Sent: 0xFD, Received: 0xF7, Bits wrong: 2
+    [0002] Sent: 0xFB, Received: 0xFF, Bits wrong: 1
+    [0003] Sent: 0xF7, Received: 0xFF, Bits wrong: 1
+    [0004] Sent: 0xEF, Received: 0xFF, Bits wrong: 1
+    [0005] Sent: 0xDF, Received: 0xFF, Bits wrong: 1
+
+Test 8: PRBS
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   4
+  Bit Errors:       10
+  Byte Errors:      3
+  Bit Error Rate:   31.250000000%
+  Byte Error Rate:  75.000000%
+  Test Duration:    11.97 seconds
+  Throughput:       2.67 bps
+  Status:           FAIL
+  Seed:             12345
+
+  First Errors (up to 10):
+    [0000] Sent: 0x9D, Received: 0xFF, Bits wrong: 3
+    [0001] Sent: 0xB6, Received: 0x6D, Bits wrong: 6
+    [0002] Sent: 0xDB, Received: 0xDF, Bits wrong: 1
+
+======================================================================
+End of Report
+======================================================================

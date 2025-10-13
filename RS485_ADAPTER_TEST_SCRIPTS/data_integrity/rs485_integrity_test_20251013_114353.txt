@@ -1,0 +1,127 @@
+======================================================================
+RS485 Data Integrity Test Report
+======================================================================
+Test Date:            2025-10-13T11:43:53.566956
+COM Port:             COM5
+Baud Rate:            9600 bps
+Total Tests:          8
+Tests Passed:         8
+Tests Failed:         0
+Total Bytes Sent:     8000
+Total Bytes Received: 8000
+Total Bit Errors:     0
+Total Byte Errors:    0
+======================================================================
+
+Individual Test Results:
+======================================================================
+
+Test 1: SEQUENTIAL
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   1000
+  Bit Errors:       0
+  Byte Errors:      0
+  Bit Error Rate:   0.000000000%
+  Byte Error Rate:  0.000000%
+  Test Duration:    2.78 seconds
+  Throughput:       2873.30 bps
+  Status:           PASS
+
+Test 2: ALTERNATING
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   1000
+  Bit Errors:       0
+  Byte Errors:      0
+  Bit Error Rate:   0.000000000%
+  Byte Error Rate:  0.000000%
+  Test Duration:    2.78 seconds
+  Throughput:       2874.00 bps
+  Status:           PASS
+
+Test 3: ALL_ZEROS
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   1000
+  Bit Errors:       0
+  Byte Errors:      0
+  Bit Error Rate:   0.000000000%
+  Byte Error Rate:  0.000000%
+  Test Duration:    2.78 seconds
+  Throughput:       2873.85 bps
+  Status:           PASS
+
+Test 4: ALL_ONES
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   1000
+  Bit Errors:       0
+  Byte Errors:      0
+  Bit Error Rate:   0.000000000%
+  Byte Error Rate:  0.000000%
+  Test Duration:    2.78 seconds
+  Throughput:       2873.72 bps
+  Status:           PASS
+
+Test 5: RANDOM
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   1000
+  Bit Errors:       0
+  Byte Errors:      0
+  Bit Error Rate:   0.000000000%
+  Byte Error Rate:  0.000000%
+  Test Duration:    2.78 seconds
+  Throughput:       2873.86 bps
+  Status:           PASS
+  Seed:             12345
+
+Test 6: WALKING_ONES
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   1000
+  Bit Errors:       0
+  Byte Errors:      0
+  Bit Error Rate:   0.000000000%
+  Byte Error Rate:  0.000000%
+  Test Duration:    2.78 seconds
+  Throughput:       2873.30 bps
+  Status:           PASS
+
+Test 7: WALKING_ZEROS
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   1000
+  Bit Errors:       0
+  Byte Errors:      0
+  Bit Error Rate:   0.000000000%
+  Byte Error Rate:  0.000000%
+  Test Duration:    2.78 seconds
+  Throughput:       2873.55 bps
+  Status:           PASS
+
+Test 8: PRBS
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   1000
+  Bit Errors:       0
+  Byte Errors:      0
+  Bit Error Rate:   0.000000000%
+  Byte Error Rate:  0.000000%
+  Test Duration:    2.78 seconds
+  Throughput:       2873.65 bps
+  Status:           PASS
+  Seed:             12345
+
+======================================================================
+End of Report
+======================================================================

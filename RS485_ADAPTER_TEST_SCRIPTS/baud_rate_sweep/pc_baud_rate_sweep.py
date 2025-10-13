@@ -41,7 +41,31 @@ class BaudRateSweepTest:
         errors = sum(s != r for s, r in zip(sent_bits, received_bits))
         return errors / len(sent_bits) if len(sent_bits) > 0 else 1.0
 
-    def test_baud_rate(self, baud_rate: int) -> Dict:
+    def send_baud_change_command(self, ser: serial.Serial, new_baud_rate: int) -> bool:
+        """Send command to ESP32 to change baud rate"""
+        try:
+            command = f"CHANGE_BAUD_{new_baud_rate}\n"
+            print(f"Sending baud change command: {command.strip()}")
+
+            ser.write(command.encode())
+            ser.flush()
+
+            # Wait for acknowledgment
+            time.sleep(0.2)
+            response = ser.readline().decode('utf-8', errors='ignore').strip()
+
+            if response == "ACK_BAUD_CHANGE":
+                print(f"Baud change acknowledged by ESP32")
+                return True
+            else:
+                print(f"Unexpected response to baud change: '{response}'")
+                return False
+
+        except Exception as e:
+            print(f"Error sending baud change command: {e}")
+            return False
+
+    def test_baud_rate(self, baud_rate: int, ser: serial.Serial = None, is_first: bool = False) -> Dict:
         """Test communication at a specific baud rate"""
         print(f"\n{'='*50}")
         print(f"Testing baud rate: {baud_rate} bps")
@@ -62,21 +86,30 @@ class BaudRateSweepTest:
             'errors': []
         }
 
+        close_ser = False
         try:
-            # Open serial connection
-            ser = serial.Serial(
-                port=self.port,
-                baudrate=baud_rate,
-                bytesize=serial.EIGHTBITS,
-                parity=serial.PARITY_NONE,
-                stopbits=serial.STOPBITS_ONE,
-                timeout=self.timeout
-            )
+            # Open serial connection if not provided
+            if ser is None:
+                ser = serial.Serial(
+                    port=self.port,
+                    baudrate=baud_rate,
+                    bytesize=serial.EIGHTBITS,
+                    parity=serial.PARITY_NONE,
+                    stopbits=serial.STOPBITS_ONE,
+                    timeout=self.timeout
+                )
+                close_ser = True
 
-            # Wait for connection to stabilize
-            time.sleep(0.5)
-            ser.reset_input_buffer()
-            ser.reset_output_buffer()
+                # Wait for connection to stabilize
+                time.sleep(0.5)
+                ser.reset_input_buffer()
+                ser.reset_output_buffer()
+            else:
+                # Change PC's baud rate to match ESP32
+                ser.baudrate = baud_rate
+                time.sleep(0.3)
+                ser.reset_input_buffer()
+                ser.reset_output_buffer()
 
             response_times = []
 
@@ -132,11 +165,14 @@ class BaudRateSweepTest:
                 # Small delay between messages
                 time.sleep(0.01)
 
-            ser.close()
+            if close_ser:
+                ser.close()
 
         except Exception as e:
             result['errors'].append(f"Serial connection error: {str(e)}")
             print(f"\nError opening serial port: {e}")
+            if close_ser and ser:
+                ser.close()
             return result
 
         # Calculate statistics
@@ -163,18 +199,57 @@ class BaudRateSweepTest:
         print(f"Timeout: {self.timeout}s")
 
         start_time = datetime.now()
+        ser = None
 
-        for i, baud_rate in enumerate(self.baud_rates):
-            overall_progress = (i / len(self.baud_rates)) * 100
-            print(f"\n\nOverall Progress: {overall_progress:.1f}% ({i+1}/{len(self.baud_rates)} baud rates)")
+        try:
+            # Open serial connection at first baud rate
+            first_baud = self.baud_rates[0]
+            print(f"\nOpening serial port at {first_baud} bps...")
 
-            result = self.test_baud_rate(baud_rate)
-            self.test_results.append(result)
+            ser = serial.Serial(
+                port=self.port,
+                baudrate=first_baud,
+                bytesize=serial.EIGHTBITS,
+                parity=serial.PARITY_NONE,
+                stopbits=serial.STOPBITS_ONE,
+                timeout=self.timeout
+            )
 
-            # Wait between baud rate changes
-            if i < len(self.baud_rates) - 1:
-                print("\nWaiting 2 seconds before next baud rate...")
-                time.sleep(2)
+            # Wait for connection to stabilize
+            time.sleep(1.0)
+            ser.reset_input_buffer()
+            ser.reset_output_buffer()
+            print("Serial port opened successfully")
+
+            for i, baud_rate in enumerate(self.baud_rates):
+                overall_progress = (i / len(self.baud_rates)) * 100
+                print(f"\n\nOverall Progress: {overall_progress:.1f}% ({i+1}/{len(self.baud_rates)} baud rates)")
+
+                # Test at current baud rate
+                result = self.test_baud_rate(baud_rate, ser, is_first=(i == 0))
+                self.test_results.append(result)
+
+                # Send baud change command to ESP32 if not the last baud rate
+                if i < len(self.baud_rates) - 1:
+                    next_baud = self.baud_rates[i + 1]
+                    print(f"\nPreparing to change from {baud_rate} to {next_baud} bps...")
+
+                    # Send command to ESP32
+                    if self.send_baud_change_command(ser, next_baud):
+                        print(f"ESP32 acknowledged baud change to {next_baud}")
+                        time.sleep(0.5)  # Give ESP32 time to switch
+                    else:
+                        print(f"WARNING: ESP32 did not acknowledge baud change")
+                        print("Continuing anyway...")
+                        time.sleep(1.0)
+
+        except Exception as e:
+            print(f"\nFatal error during sweep: {e}")
+
+        finally:
+            if ser and ser.is_open:
+                ser.close()
+                print("\nSerial port closed")
 
         end_time = datetime.now()
 

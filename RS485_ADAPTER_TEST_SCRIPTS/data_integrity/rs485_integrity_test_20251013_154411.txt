@@ -1,0 +1,551 @@
+======================================================================
+RS485 Data Integrity Test Report
+======================================================================
+Test Date:            2025-10-13T15:44:11.604679
+COM Port:             COM5
+Baud Rate:            multi bps
+Total Tests:          40
+Tests Passed:         40
+Tests Failed:         0
+Total Bytes Sent:     40000
+Total Bytes Received: 40000
+Total Bit Errors:     0
+Total Byte Errors:    0
+======================================================================
+
+Individual Test Results:
+======================================================================
+
+Test 1: SEQUENTIAL
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   1000
+  Bit Errors:       0
+  Byte Errors:      0
+  Bit Error Rate:   0.000000000%
+  Byte Error Rate:  0.000000%
+  Test Duration:    2.78 seconds
+  Throughput:       2873.48 bps
+  Status:           PASS
+
+Test 2: ALTERNATING
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   1000
+  Bit Errors:       0
+  Byte Errors:      0
+  Bit Error Rate:   0.000000000%
+  Byte Error Rate:  0.000000%
+  Test Duration:    2.78 seconds
+  Throughput:       2873.00 bps
+  Status:           PASS
+
+Test 3: ALL_ZEROS
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   1000
+  Bit Errors:       0
+  Byte Errors:      0
+  Bit Error Rate:   0.000000000%
+  Byte Error Rate:  0.000000%
+  Test Duration:    2.78 seconds
+  Throughput:       2873.00 bps
+  Status:           PASS
+
+Test 4: ALL_ONES
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   1000
+  Bit Errors:       0
+  Byte Errors:      0
+  Bit Error Rate:   0.000000000%
+  Byte Error Rate:  0.000000%
+  Test Duration:    2.78 seconds
+  Throughput:       2873.39 bps
+  Status:           PASS
+
+Test 5: RANDOM
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   1000
+  Bit Errors:       0
+  Byte Errors:      0
+  Bit Error Rate:   0.000000000%
+  Byte Error Rate:  0.000000%
+  Test Duration:    2.78 seconds
+  Throughput:       2873.56 bps
+  Status:           PASS
+  Seed:             12345
+
+Test 6: WALKING_ONES
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   1000
+  Bit Errors:       0
+  Byte Errors:      0
+  Bit Error Rate:   0.000000000%
+  Byte Error Rate:  0.000000%
+  Test Duration:    2.78 seconds
+  Throughput:       2873.89 bps
+  Status:           PASS
+
+Test 7: WALKING_ZEROS
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   1000
+  Bit Errors:       0
+  Byte Errors:      0
+  Bit Error Rate:   0.000000000%
+  Byte Error Rate:  0.000000%
+  Test Duration:    2.78 seconds
+  Throughput:       2873.88 bps
+  Status:           PASS
+
+Test 8: PRBS
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   1000
+  Bit Errors:       0
+  Byte Errors:      0
+  Bit Error Rate:   0.000000000%
+  Byte Error Rate:  0.000000%
+  Test Duration:    2.78 seconds
+  Throughput:       2873.53 bps
+  Status:           PASS
+  Seed:             12345
+
+Test 9: SEQUENTIAL
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   1000
+  Bit Errors:       0
+  Byte Errors:      0
+  Bit Error Rate:   0.000000000%
+  Byte Error Rate:  0.000000%
+  Test Duration:    1.80 seconds
+  Throughput:       4450.83 bps
+  Status:           PASS
+
+Test 10: ALTERNATING
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   1000
+  Bit Errors:       0
+  Byte Errors:      0
+  Bit Error Rate:   0.000000000%
+  Byte Error Rate:  0.000000%
+  Test Duration:    1.80 seconds
+  Throughput:       4448.21 bps
+  Status:           PASS
+
+Test 11: ALL_ZEROS
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   1000
+  Bit Errors:       0
+  Byte Errors:      0
+  Bit Error Rate:   0.000000000%
+  Byte Error Rate:  0.000000%
+  Test Duration:    1.80 seconds
+  Throughput:       4449.92 bps
+  Status:           PASS
+
+Test 12: ALL_ONES
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   1000
+  Bit Errors:       0
+  Byte Errors:      0
+  Bit Error Rate:   0.000000000%
+  Byte Error Rate:  0.000000%
+  Test Duration:    1.80 seconds
+  Throughput:       4450.14 bps
+  Status:           PASS
+
+Test 13: RANDOM
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   1000
+  Bit Errors:       0
+  Byte Errors:      0
+  Bit Error Rate:   0.000000000%
+  Byte Error Rate:  0.000000%
+  Test Duration:    1.80 seconds
+  Throughput:       4449.34 bps
+  Status:           PASS
+  Seed:             12345
+
+Test 14: WALKING_ONES
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   1000
+  Bit Errors:       0
+  Byte Errors:      0
+  Bit Error Rate:   0.000000000%
+  Byte Error Rate:  0.000000%
+  Test Duration:    1.80 seconds
+  Throughput:       4449.28 bps
+  Status:           PASS
+
+Test 15: WALKING_ZEROS
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   1000
+  Bit Errors:       0
+  Byte Errors:      0
+  Bit Error Rate:   0.000000000%
+  Byte Error Rate:  0.000000%
+  Test Duration:    1.80 seconds
+  Throughput:       4448.84 bps
+  Status:           PASS
+
+Test 16: PRBS
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   1000
+  Bit Errors:       0
+  Byte Errors:      0
+  Bit Error Rate:   0.000000000%
+  Byte Error Rate:  0.000000%
+  Test Duration:    1.80 seconds
+  Throughput:       4447.89 bps
+  Status:           PASS
+  Seed:             12345
+
+Test 17: SEQUENTIAL
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   1000
+  Bit Errors:       0
+  Byte Errors:      0
+  Bit Error Rate:   0.000000000%
+  Byte Error Rate:  0.000000%
+  Test Duration:    1.31 seconds
+  Throughput:       6129.24 bps
+  Status:           PASS
+
+Test 18: ALTERNATING
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   1000
+  Bit Errors:       0
+  Byte Errors:      0
+  Bit Error Rate:   0.000000000%
+  Byte Error Rate:  0.000000%
+  Test Duration:    1.31 seconds
+  Throughput:       6129.66 bps
+  Status:           PASS
+
+Test 19: ALL_ZEROS
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   1000
+  Bit Errors:       0
+  Byte Errors:      0
+  Bit Error Rate:   0.000000000%
+  Byte Error Rate:  0.000000%
+  Test Duration:    1.31 seconds
+  Throughput:       6129.99 bps
+  Status:           PASS
+
+Test 20: ALL_ONES
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   1000
+  Bit Errors:       0
+  Byte Errors:      0
+  Bit Error Rate:   0.000000000%
+  Byte Error Rate:  0.000000%
+  Test Duration:    1.31 seconds
+  Throughput:       6129.76 bps
+  Status:           PASS
+
+Test 21: RANDOM
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   1000
+  Bit Errors:       0
+  Byte Errors:      0
+  Bit Error Rate:   0.000000000%
+  Byte Error Rate:  0.000000%
+  Test Duration:    1.31 seconds
+  Throughput:       6129.65 bps
+  Status:           PASS
+  Seed:             12345
+
+Test 22: WALKING_ONES
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   1000
+  Bit Errors:       0
+  Byte Errors:      0
+  Bit Error Rate:   0.000000000%
+  Byte Error Rate:  0.000000%
+  Test Duration:    1.30 seconds
+  Throughput:       6132.44 bps
+  Status:           PASS
+
+Test 23: WALKING_ZEROS
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   1000
+  Bit Errors:       0
+  Byte Errors:      0
+  Bit Error Rate:   0.000000000%
+  Byte Error Rate:  0.000000%
+  Test Duration:    1.31 seconds
+  Throughput:       6130.19 bps
+  Status:           PASS
+
+Test 24: PRBS
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   1000
+  Bit Errors:       0
+  Byte Errors:      0
+  Bit Error Rate:   0.000000000%
+  Byte Error Rate:  0.000000%
+  Test Duration:    1.31 seconds
+  Throughput:       6129.03 bps
+  Status:           PASS
+  Seed:             12345
+
+Test 25: SEQUENTIAL
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   1000
+  Bit Errors:       0
+  Byte Errors:      0
+  Bit Error Rate:   0.000000000%
+  Byte Error Rate:  0.000000%
+  Test Duration:    1.14 seconds
+  Throughput:       7013.04 bps
+  Status:           PASS
+
+Test 26: ALTERNATING
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   1000
+  Bit Errors:       0
+  Byte Errors:      0
+  Bit Error Rate:   0.000000000%
+  Byte Error Rate:  0.000000%
+  Test Duration:    1.14 seconds
+  Throughput:       7015.77 bps
+  Status:           PASS
+
+Test 27: ALL_ZEROS
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   1000
+  Bit Errors:       0
+  Byte Errors:      0
+  Bit Error Rate:   0.000000000%
+  Byte Error Rate:  0.000000%
+  Test Duration:    1.14 seconds
+  Throughput:       7018.19 bps
+  Status:           PASS
+
+Test 28: ALL_ONES
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   1000
+  Bit Errors:       0
+  Byte Errors:      0
+  Bit Error Rate:   0.000000000%
+  Byte Error Rate:  0.000000%
+  Test Duration:    1.14 seconds
+  Throughput:       7012.98 bps
+  Status:           PASS
+
+Test 29: RANDOM
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   1000
+  Bit Errors:       0
+  Byte Errors:      0
+  Bit Error Rate:   0.000000000%
+  Byte Error Rate:  0.000000%
+  Test Duration:    1.14 seconds
+  Throughput:       7014.28 bps
+  Status:           PASS
+  Seed:             12345
+
+Test 30: WALKING_ONES
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   1000
+  Bit Errors:       0
+  Byte Errors:      0
+  Bit Error Rate:   0.000000000%
+  Byte Error Rate:  0.000000%
+  Test Duration:    1.14 seconds
+  Throughput:       7018.16 bps
+  Status:           PASS
+
+Test 31: WALKING_ZEROS
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   1000
+  Bit Errors:       0
+  Byte Errors:      0
+  Bit Error Rate:   0.000000000%
+  Byte Error Rate:  0.000000%
+  Test Duration:    1.14 seconds
+  Throughput:       7019.40 bps
+  Status:           PASS
+
+Test 32: PRBS
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   1000
+  Bit Errors:       0
+  Byte Errors:      0
+  Bit Error Rate:   0.000000000%
+  Byte Error Rate:  0.000000%
+  Test Duration:    1.14 seconds
+  Throughput:       7013.72 bps
+  Status:           PASS
+  Seed:             12345
+
+Test 33: SEQUENTIAL
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   1000
+  Bit Errors:       0
+  Byte Errors:      0
+  Bit Error Rate:   0.000000000%
+  Byte Error Rate:  0.000000%
+  Test Duration:    0.98 seconds
+  Throughput:       8193.50 bps
+  Status:           PASS
+
+Test 34: ALTERNATING
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   1000
+  Bit Errors:       0
+  Byte Errors:      0
+  Bit Error Rate:   0.000000000%
+  Byte Error Rate:  0.000000%
+  Test Duration:    0.98 seconds
+  Throughput:       8192.84 bps
+  Status:           PASS
+
+Test 35: ALL_ZEROS
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   1000
+  Bit Errors:       0
+  Byte Errors:      0
+  Bit Error Rate:   0.000000000%
+  Byte Error Rate:  0.000000%
+  Test Duration:    0.98 seconds
+  Throughput:       8193.83 bps
+  Status:           PASS
+
+Test 36: ALL_ONES
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   1000
+  Bit Errors:       0
+  Byte Errors:      0
+  Bit Error Rate:   0.000000000%
+  Byte Error Rate:  0.000000%
+  Test Duration:    0.98 seconds
+  Throughput:       8191.63 bps
+  Status:           PASS
+
+Test 37: RANDOM
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   1000
+  Bit Errors:       0
+  Byte Errors:      0
+  Bit Error Rate:   0.000000000%
+  Byte Error Rate:  0.000000%
+  Test Duration:    0.98 seconds
+  Throughput:       8195.68 bps
+  Status:           PASS
+  Seed:             12345
+
+Test 38: WALKING_ONES
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   1000
+  Bit Errors:       0
+  Byte Errors:      0
+  Bit Error Rate:   0.000000000%
+  Byte Error Rate:  0.000000%
+  Test Duration:    0.98 seconds
+  Throughput:       8198.02 bps
+  Status:           PASS
+
+Test 39: WALKING_ZEROS
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   1000
+  Bit Errors:       0
+  Byte Errors:      0
+  Bit Error Rate:   0.000000000%
+  Byte Error Rate:  0.000000%
+  Test Duration:    0.98 seconds
+  Throughput:       8194.66 bps
+  Status:           PASS
+
+Test 40: PRBS
+----------------------------------------------------------------------
+  Data Length:      1000 bytes
+  Bytes Sent:       1000
+  Bytes Received:   1000
+  Bit Errors:       0
+  Byte Errors:      0
+  Bit Error Rate:   0.000000000%
+  Byte Error Rate:  0.000000%
+  Test Duration:    0.98 seconds
+  Throughput:       8192.59 bps
+  Status:           PASS
+  Seed:             12345
+
+======================================================================
+End of Report
+======================================================================
