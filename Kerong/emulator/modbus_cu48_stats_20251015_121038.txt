@@ -1,0 +1,101 @@
+============================================================
+MODBUS RTU SLAVE EMULATOR V3 - STATISTICS (CU48)
+============================================================
+Runtime: 261.9 seconds
+
+REQUESTS:
+  Total Requests:     32
+  Valid Requests:     0
+  Invalid Requests:   32
+  Responses Sent:     0
+
+ERRORS:
+  CRC Errors:         16
+  Framing Errors:     16
+  Timeout Errors:     0
+  Unsupported Func:   0
+
+CU48 LOCK OPERATIONS:
+  Locks Unlocked:     0
+  Locks Locked:       0
+
+DATA TRANSFER:
+  Bytes Received:     217
+  Bytes Sent:         0
+
+PER-DEVICE REQUESTS:
+
+FUNCTION CODE USAGE:
+============================================================
+
+LAST 5 ERRORS (Most Recent First)
+======================================================================
+
+[2025-10-15 12:08:19.431] CRC ERROR
+Description: CRC mismatch: received E000, expected 8F8B
+
+Received Frame (12 bytes):
+   00   E0   00   00   00   00   E0   00   00   E0  [E0]  00  
+                                                     ^^       
+  Error at byte position 10
+
+Frame Analysis:
+  Device Address: 0x00 (0)
+  Function Code:  0xE0 (Unknown/Invalid)
+  Received CRC:   E000 (bytes 10:12)
+  Expected CRC:   8F8B
+  CRC Difference: MISMATCH
+======================================================================
+
+[2025-10-15 12:08:19.415] FRAMING ERROR
+Description: Frame too short: 1 bytes (minimum 4 bytes required)
+
+Received Frame (1 bytes):
+   00  
+
+Frame Analysis:
+  Device Address: 0x00 (0)
+======================================================================
+
+[2025-10-15 12:08:19.312] CRC ERROR
+Description: CRC mismatch: received 0000, expected 4FB5
+
+Received Frame (10 bytes):
+   E0   00   00   00   00   E0   00   00  [00]  00  
+                                           ^^       
+  Error at byte position 8
+
+Frame Analysis:
+  Device Address: 0xE0 (224)
+  Function Code:  0x00 (Unknown/Invalid)
+  Received CRC:   0000 (bytes 8:10)
+  Expected CRC:   4FB5
+  CRC Difference: MISMATCH
+======================================================================
+
+[2025-10-15 12:08:19.298] FRAMING ERROR
+Description: Frame too short: 2 bytes (minimum 4 bytes required)
+
+Received Frame (2 bytes):
+   E0   00  
+
+Frame Analysis:
+  Device Address: 0xE0 (224)
+  Function Code:  0x00 (Unknown/Invalid)
+======================================================================
+
+[2025-10-15 12:08:19.195] CRC ERROR
+Description: CRC mismatch: received E000, expected 5BDF
+
+Received Frame (14 bytes):
+   00   E0   00   00   00   00   E0   00   E0   E0   E0   E0  [E0]  00  
+                                                               ^^       
+  Error at byte position 12
+
+Frame Analysis:
+  Device Address: 0x00 (0)
+  Function Code:  0xE0 (Unknown/Invalid)
+  Received CRC:   E000 (bytes 12:14)
+  Expected CRC:   5BDF
+  CRC Difference: MISMATCH
+======================================================================

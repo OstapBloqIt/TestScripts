@@ -107,6 +107,59 @@ collect_all_data() {
     cat /sys/bus/usb/devices/2-1.5/serial 2>/dev/null > "$TEMP_DIR/cp2108_serial.txt" || echo "N/A" > "$TEMP_DIR/cp2108_serial.txt"
     cat /sys/bus/usb/devices/2-1.5/idVendor 2>/dev/null > "$TEMP_DIR/cp2108_vendor.txt" || echo "10c4" > "$TEMP_DIR/cp2108_vendor.txt"
     cat /sys/bus/usb/devices/2-1.5/idProduct 2>/dev/null > "$TEMP_DIR/cp2108_product_id.txt" || echo "ea71" > "$TEMP_DIR/cp2108_product_id.txt"
+
+    log_info "Collecting native UART information (using safe sysfs methods)..."
+
+    # Native UART ports - use SAFE sysfs inspection only
+    # NEVER use: dmesg grep on uart/serial, ls /dev/ttymxc*, or ls /dev/ttyS*
+    # These can crash SSH sessions on this platform
+
+    # Safe method: Inspect /sys/class/tty/ for native serial ports
+    echo "=== Native UART Ports (ttymxc*) ===" > "$TEMP_DIR/native_uart.txt"
+    for tty in /sys/class/tty/ttymxc*; do
+        if [ -e "$tty" ]; then
+            tty_name=$(basename "$tty")
+            echo "Found: $tty_name" >> "$TEMP_DIR/native_uart.txt"
+
+            # Get device path safely
+            if [ -e "$tty/device" ]; then
+                device_path=$(readlink -f "$tty/device" 2>/dev/null || echo "unknown")
+                echo "  Device: $device_path" >> "$TEMP_DIR/native_uart.txt"
+            fi
+
+            # Get driver information safely
+            if [ -e "$tty/device/driver" ]; then
+                driver=$(readlink "$tty/device/driver" 2>/dev/null | xargs basename 2>/dev/null || echo "unknown")
+                echo "  Driver: $driver" >> "$TEMP_DIR/native_uart.txt"
+            fi
+
+            # Get UART type if available
+            if [ -f "$tty/device/type" ]; then
+                uart_type=$(cat "$tty/device/type" 2>/dev/null || echo "unknown")
+                echo "  Type: $uart_type" >> "$TEMP_DIR/native_uart.txt"
+            fi
+
+            echo "" >> "$TEMP_DIR/native_uart.txt"
+        fi
+    done
+
+    # Also check for standard ttyS* ports (legacy serial)
+    echo "=== Standard Serial Ports (ttyS*) ===" >> "$TEMP_DIR/native_uart.txt"
+    for tty in /sys/class/tty/ttyS[0-3]; do
+        if [ -e "$tty" ]; then
+            tty_name=$(basename "$tty")
+            # Check if it has an actual device (not just a placeholder)
+            if [ -e "$tty/device/driver" ]; then
+                echo "Found: $tty_name" >> "$TEMP_DIR/native_uart.txt"
+                driver=$(readlink "$tty/device/driver" 2>/dev/null | xargs basename 2>/dev/null || echo "unknown")
+                echo "  Driver: $driver" >> "$TEMP_DIR/native_uart.txt"
+                echo "" >> "$TEMP_DIR/native_uart.txt"
+            fi
+        fi
+    done
+
+    # Count native UART devices
+    grep -c "^Found:" "$TEMP_DIR/native_uart.txt" > "$TEMP_DIR/native_uart_count.txt" 2>/dev/null || echo "0" > "$TEMP_DIR/native_uart_count.txt"
 }
 
 ################################################################################
@@ -159,6 +212,9 @@ generate_report() {
 
     local total_tty=$(grep -c "ttyUSB" "$TEMP_DIR/tty_class_devices.txt" 2>/dev/null || echo "0")
 
+    # Native UART analysis
+    local native_uart_count=$(cat "$TEMP_DIR/native_uart_count.txt" 2>/dev/null || echo "0")
+
     # CP2108 details
     local cp2108_product=$(cat "$TEMP_DIR/cp2108_product.txt" 2>/dev/null)
     local cp2108_serial=$(cat "$TEMP_DIR/cp2108_serial.txt" 2>/dev/null)
@@ -170,6 +226,7 @@ generate_report() {
     local cp2104_icon=$([ "$cp2104_found" == "YES" ] && echo "✅" || echo "⚠️")
     local rs485_icon=$([ "$rs485_count" == "4" ] && echo "✅" || echo "⚠️")
     local hub_icon=$([ "$hub_found" == "YES" ] && echo "✅" || echo "❌")
+    local native_uart_icon=$([ "$native_uart_count" -gt "0" ] && echo "✅" || echo "⚠️")
 
     # Generate the report
     cat > "$REPORT_FILE" << EOF
@@ -193,6 +250,7 @@ $cp2108_icon **CP2108 Quad UART Bridge:** $([ "$cp2108_found" == "YES" ] && echo
 $hub_icon **USB Hub (Microchip 0424:2517):** $([ "$hub_found" == "YES" ] && echo "FOUND" || echo "NOT FOUND") ($hub_ports ports)
 $cp2104_icon **CP2104:** $([ "$cp2104_found" == "YES" ] && echo "FOUND" || echo "NOT FOUND")$([ "$cp2104_was_detected" == "YES" ] && [ "$cp2104_found" == "NO" ] && echo " (was detected, now disconnected)" || echo "")
 $rs485_icon **RS485 Transceivers:** $rs485_count/4 channels operational
+$native_uart_icon **Native UART Ports:** $native_uart_count detected
 ✅ **Serial Devices:** $total_tty ttyUSB devices enumerated
 
 ---
@@ -291,28 +349,14 @@ EOF
         cat >> "$REPORT_FILE" << EOF
 ### Detection History
 
-The CP2104 device was detected in kernel messages:
-
 \`\`\`
 $(grep -E "(2-1\.1|ttyUSB8)" "$TEMP_DIR/dmesg_cp210x.txt" 2>/dev/null || echo "No detection history found")
 \`\`\`
-
-**Analysis:**
-- Device was temporarily enumerated
-- May indicate physical connection issue
-- Could be power-related problem
-- Recommend checking cable and connections
 
 EOF
     fi
 
     cat >> "$REPORT_FILE" << EOF
-**Recommendation:**
-- Check physical connection of CP2104 to USB hub
-- Verify power supply to the device
-- Inspect USB cable and connectors
-- Re-run validation after securing connection
-
 ---
 
 ## 5. RS485 Transceiver Validation
@@ -348,7 +392,23 @@ $(grep "ttyUSB[0-3]" "$TEMP_DIR/tty_class_devices.txt" 2>/dev/null || echo "No R
 
 ---
 
-## 6. Serial Device Summary
+## 6. Native UART Port Validation
+
+### iMX8M Mini Native UARTs
+
+**Status:** $([ "$native_uart_count" -gt "0" ] && echo "✅ DETECTED ($native_uart_count ports)" || echo "⚠️ NO NATIVE UARTS DETECTED")
+
+The iMX8M Mini SoC provides integrated UART controllers (ttymxcX devices).
+
+### Detected Native UART Ports
+
+\`\`\`
+$(cat "$TEMP_DIR/native_uart.txt" 2>/dev/null || echo "No native UART ports detected")
+\`\`\`
+
+---
+
+## 7. Serial Device Summary
 
 ### All Enumerated Serial Devices
 
@@ -358,7 +418,7 @@ $(cat "$TEMP_DIR/tty_class_devices.txt" 2>/dev/null || echo "No serial devices f
 
 ---
 
-## 7. Kernel Driver Status
+## 8. Kernel Driver Status
 
 ### CP210x Driver Module
 
@@ -380,7 +440,7 @@ $(cat "$TEMP_DIR/dmesg_cp210x.txt" 2>/dev/null)
 
 ---
 
-## 8. Validation Results Summary
+## 9. Validation Results Summary
 
 ### ✅ Successful Validations
 
@@ -391,6 +451,7 @@ EOF
     [ "$hub_found" == "YES" ] && echo "| USB Hub Enumeration | PASS | Microchip 0424:2517 properly detected |" >> "$REPORT_FILE"
     [ "$cp2108_found" == "YES" ] && echo "| CP2108 Enumeration | PASS | All $cp2108_interfaces interfaces detected |" >> "$REPORT_FILE"
     [ "$cp2108_found" == "YES" ] && echo "| CP2108 Driver Binding | PASS | cp210x driver bound to all interfaces |" >> "$REPORT_FILE"
+    [ "$native_uart_count" -gt "0" ] && echo "| Native UART Detection | PASS | $native_uart_count native UART port(s) detected |" >> "$REPORT_FILE"
 
     for i in 0 1 2 3; do
         if grep -q "ttyUSB$i" "$TEMP_DIR/tty_class_devices.txt" 2>/dev/null && \
@@ -403,63 +464,29 @@ EOF
 
 ### ⚠️ Issues and Warnings
 
-| Issue | Severity | Status | Recommendation |
-|-------|----------|--------|----------------|
+| Issue | Severity | Status |
+|-------|----------|--------|
 EOF
 
     if [ "$cp2104_found" != "YES" ] && [ "$cp2104_was_detected" == "YES" ]; then
-        echo "| CP2104 Disconnected | Warning | Device was detected but disconnected | Check physical connection and power |" >> "$REPORT_FILE"
+        echo "| CP2104 Disconnected | Warning | Device was detected but disconnected |" >> "$REPORT_FILE"
     elif [ "$cp2104_found" != "YES" ]; then
-        echo "| CP2104 Not Found | Info | Device not detected | Verify device is connected to USB hub |" >> "$REPORT_FILE"
+        echo "| CP2104 Not Found | Info | Device not detected |" >> "$REPORT_FILE"
     fi
 
     if [ "$cp2108_found" != "YES" ]; then
-        echo "| CP2108 Not Found | Critical | CP2108 not detected | Check USB hub connection and device |" >> "$REPORT_FILE"
+        echo "| CP2108 Not Found | Critical | CP2108 not detected |" >> "$REPORT_FILE"
     fi
 
     if [ "$rs485_count" != "4" ]; then
-        echo "| Incomplete RS485 | Warning | Only $rs485_count/4 RS485 channels detected | Check CP2108 interfaces |" >> "$REPORT_FILE"
+        echo "| Incomplete RS485 | Warning | Only $rs485_count/4 RS485 channels detected |" >> "$REPORT_FILE"
+    fi
+
+    if [ "$native_uart_count" == "0" ]; then
+        echo "| No Native UARTs | Info | No native UART ports detected |" >> "$REPORT_FILE"
     fi
 
     cat >> "$REPORT_FILE" << EOF
-
----
-
-## 9. Recommendations
-
-### Immediate Actions
-
-EOF
-
-    if [ "$cp2104_found" != "YES" ] && [ "$cp2104_was_detected" == "YES" ]; then
-        cat >> "$REPORT_FILE" << EOF
-1. **CP2104 Connection Issue:**
-   - Verify physical USB connection to hub
-   - Check cable integrity
-   - Ensure adequate power supply
-   - Re-run validation script after fixing connection
-
-EOF
-    fi
-
-    cat >> "$REPORT_FILE" << EOF
-### Testing Next Steps
-
-1. **Serial Port Communication Testing:**
-   - Test serial communication on available ttyUSB devices
-   - Verify baud rate configuration
-   - Test RS485 half-duplex operation
-   - Verify RS485 transceiver enable/disable control
-
-2. **Functional Validation:**
-   - Perform loopback tests on RS485 channels
-   - Test with actual RS485 peripherals
-   - Monitor for transmission errors
-
-3. **Re-run Validation:**
-   \`\`\`bash
-   ./usb_rs485_validator.sh
-   \`\`\`
 
 ---
 
@@ -473,21 +500,8 @@ $kernel_full
 
 ---
 
-## Validation Report Metadata
-
 **Generated:** $report_datetime
-**Script Version:** 1.0
 **Hardware Platform:** Toradex Verdin iMX8M Mini
-**Report File:** $REPORT_FILE
-
----
-
-## Conclusion
-
-This validation report was automatically generated by the USB/RS485 validation script.
-All data was collected at the time of script execution ($report_datetime).
-
-For questions or issues, re-run this script to generate an updated report.
 
 EOF
 
@@ -529,10 +543,12 @@ main() {
         fi
     done
     local hub_found=$(grep -q "0424:2517" "$TEMP_DIR/lsusb.txt" 2>/dev/null && echo "YES" || echo "NO")
+    local native_uart_count=$(cat "$TEMP_DIR/native_uart_count.txt" 2>/dev/null || echo "0")
 
     echo -e "CP2108 Status: $([ "$cp2108_found" == "YES" ] && echo "${GREEN}FOUND${NC}" || echo "${RED}NOT FOUND${NC}")"
     echo -e "CP2104 Status: $([ "$cp2104_found" == "YES" ] && echo "${GREEN}FOUND${NC}" || echo "${YELLOW}NOT CONNECTED${NC}")"
     echo -e "RS485 Channels: $([ "$rs485_count" == "4" ] && echo "${GREEN}$rs485_count/4${NC}" || echo "${YELLOW}$rs485_count/4${NC}")"
+    echo -e "Native UARTs:   $([ "$native_uart_count" -gt "0" ] && echo "${GREEN}$native_uart_count detected${NC}" || echo "${YELLOW}None detected${NC}")"
     echo -e "USB Hub Status: $([ "$hub_found" == "YES" ] && echo "${GREEN}FOUND${NC}" || echo "${RED}NOT FOUND${NC}")"
 
     echo "=========================================="

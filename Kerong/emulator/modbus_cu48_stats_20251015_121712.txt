@@ -1,0 +1,31 @@
+============================================================
+MODBUS RTU SLAVE EMULATOR V3 - STATISTICS (CU48)
+============================================================
+Runtime: 0.5 seconds
+
+REQUESTS:
+  Total Requests:     0
+  Valid Requests:     0
+  Invalid Requests:   0
+  Responses Sent:     0
+
+ERRORS:
+  CRC Errors:         0
+  Framing Errors:     0
+  Timeout Errors:     0
+  Unsupported Func:   0
+
+CU48 LOCK OPERATIONS:
+  Locks Unlocked:     0
+  Locks Locked:       0
+
+DATA TRANSFER:
+  Bytes Received:     0
+  Bytes Sent:         0
+
+PER-DEVICE REQUESTS:
+
+FUNCTION CODE USAGE:
+============================================================
+
+No recent errors

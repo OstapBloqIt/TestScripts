@@ -1,0 +1,43 @@
+{
+  "test_info": {
+    "start_time": "2025-10-14T14:57:03.981880",
+    "end_time": "2025-10-14T14:57:09.292421",
+    "duration_seconds": 5.310541,
+    "port": "COM5",
+    "timeout": 2.0,
+    "messages_per_baud_rate": 10,
+    "baud_rates_tested": [
+      9600,
+      19200,
+      38400,
+      57600,
+      115200
+    ]
+  },
+  "results": [
+    {
+      "baudrate": 9600,
+      "timestamp": "2025-10-14T14:57:03.982526",
+      "total_messages": 10,
+      "successful_messages": 10,
+      "failed_messages": 0,
+      "timeout_errors": 0,
+      "success_rate": 100.0,
+      "average_response_time": 92.92769432067871,
+      "errors": []
+    },
+    {
+      "baudrate": 19200,
+      "timestamp": "2025-10-14T14:57:06.031665",
+      "total_messages": 10,
+      "successful_messages": 0,
+      "failed_messages": 0,
+      "timeout_errors": 0,
+      "success_rate": 0.0,
+      "average_response_time": 0.0,
+      "errors": [
+        "Baud change negotiation failed"
+      ]
+    }
+  ]
+}

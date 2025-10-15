@@ -1,0 +1,397 @@
+[2025-10-14 14:46:41.219] [INFO] Starting CP2104 monitoring...
+[2025-10-14 14:46:41.224] [INFO] Target device: VID=10c4 PID=ea60
+[2025-10-14 14:46:41.229] [INFO] Log file: ./logs/cp2104_monitor_20251014_144641.log
+[2025-10-14 14:46:41.234] [INFO] Press Ctrl+C to stop monitoring
+[2025-10-14 14:46:41.261] [INFO] CP2104 not currently connected - waiting for events...
+[2025-10-14 14:50:02.454] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:02.691] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:02.741] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:02.974] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:03.023] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:03.256] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:03.308] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:03.541] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:03.589] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:03.822] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:03.874] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:04.107] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:04.158] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:04.392] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:04.438] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:04.671] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:04.720] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:04.952] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:05.000] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:05.232] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:05.282] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:05.516] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:05.567] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:05.799] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:05.848] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:06.081] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:06.132] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:06.366] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:06.417] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:06.650] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:06.701] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:06.935] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:06.986] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:07.220] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:07.271] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:07.504] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:07.556] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:07.789] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:07.840] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:08.073] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:08.122] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:08.355] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:08.407] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:08.639] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:08.690] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:08.923] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:08.975] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:09.208] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:09.269] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:09.309] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:09.349] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:09.389] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:09.429] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:09.469] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:09.509] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:09.549] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:09.589] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:09.629] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:09.669] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:09.678] [CONNECT] CP2104 detected - 
+[2025-10-14 14:50:09.908] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:09.954] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:09.963] [CONNECT] CP2104 detected - 
+[2025-10-14 14:50:10.193] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:10.235] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:10.244] [CONNECT] CP2104 detected - 
+[2025-10-14 14:50:10.475] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:10.517] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:10.526] [CONNECT] CP2104 detected - 
+[2025-10-14 14:50:10.757] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:10.802] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:10.811] [CONNECT] CP2104 detected - 
+[2025-10-14 14:50:11.041] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:11.082] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:11.090] [CONNECT] CP2104 detected - 
+[2025-10-14 14:50:11.320] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:11.364] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:11.373] [CONNECT] CP2104 detected - 
+[2025-10-14 14:50:11.603] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:11.646] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:11.655] [CONNECT] CP2104 detected - 
+[2025-10-14 14:50:11.885] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:11.928] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:11.937] [CONNECT] CP2104 detected - 
+[2025-10-14 14:50:12.167] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:12.211] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:12.220] [CONNECT] CP2104 detected - 
+[2025-10-14 14:50:12.450] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:12.493] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:12.502] [CONNECT] CP2104 detected - 
+[2025-10-14 14:50:12.733] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:12.777] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:12.786] [CONNECT] CP2104 detected - 
+[2025-10-14 14:50:13.016] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:13.059] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:13.068] [CONNECT] CP2104 detected - 
+[2025-10-14 14:50:13.299] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:13.342] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:13.350] [CONNECT] CP2104 detected - 
+[2025-10-14 14:50:13.580] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:13.624] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:13.633] [CONNECT] CP2104 detected - 
+[2025-10-14 14:50:13.863] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:13.907] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:13.917] [CONNECT] CP2104 detected - 
+[2025-10-14 14:50:14.147] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:14.191] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:14.200] [CONNECT] CP2104 detected - 
+[2025-10-14 14:50:14.430] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:14.475] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:14.484] [CONNECT] CP2104 detected - 
+[2025-10-14 14:50:14.714] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:14.755] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:14.764] [CONNECT] CP2104 detected - 
+[2025-10-14 14:50:14.995] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:15.038] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:15.047] [CONNECT] CP2104 detected - 
+[2025-10-14 14:50:15.278] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:15.319] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:15.328] [CONNECT] CP2104 detected - 
+[2025-10-14 14:50:15.559] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:15.601] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:15.610] [CONNECT] CP2104 detected - 
+[2025-10-14 14:50:15.840] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:15.880] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:15.889] [CONNECT] CP2104 detected - 
+[2025-10-14 14:50:16.120] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:16.163] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:16.171] [CONNECT] CP2104 detected - 
+[2025-10-14 14:50:16.401] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:16.444] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:16.453] [CONNECT] CP2104 detected - 
+[2025-10-14 14:50:16.684] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:16.726] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:16.735] [CONNECT] CP2104 detected - 
+[2025-10-14 14:50:16.965] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:17.009] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:17.018] [CONNECT] CP2104 detected - 
+[2025-10-14 14:50:17.248] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:17.293] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:17.302] [CONNECT] CP2104 detected - 
+[2025-10-14 14:50:17.532] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:17.576] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:17.585] [CONNECT] CP2104 detected - 
+[2025-10-14 14:50:17.817] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:17.860] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:17.869] [CONNECT] CP2104 detected - 
+[2025-10-14 14:50:18.100] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:18.147] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:18.155] [CONNECT] CP2104 detected - 
+[2025-10-14 14:50:18.386] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:18.429] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:18.438] [CONNECT] CP2104 detected - 
+[2025-10-14 14:50:18.670] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:18.712] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:18.720] [CONNECT] CP2104 detected - 
+[2025-10-14 14:50:18.952] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:18.992] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:19.001] [CONNECT] CP2104 detected - 
+[2025-10-14 14:50:19.232] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:19.276] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:19.285] [CONNECT] CP2104 detected - 
+[2025-10-14 14:50:19.518] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:19.558] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:19.567] [CONNECT] CP2104 detected - 
+[2025-10-14 14:50:19.799] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:19.842] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:19.851] [CONNECT] CP2104 detected - 
+[2025-10-14 14:50:20.083] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:20.126] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:20.135] [CONNECT] CP2104 detected - 
+[2025-10-14 14:50:20.367] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:20.410] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:20.419] [CONNECT] CP2104 detected - 
+[2025-10-14 14:50:20.651] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:20.691] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:20.700] [CONNECT] CP2104 detected - 
+[2025-10-14 14:50:20.932] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:20.975] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:20.984] [CONNECT] CP2104 detected - 
+[2025-10-14 14:50:21.217] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:21.265] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:21.274] [CONNECT] CP2104 detected - 
+[2025-10-14 14:50:21.506] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:21.549] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:21.558] [CONNECT] CP2104 detected - 
+[2025-10-14 14:50:21.790] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:21.835] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:21.844] [CONNECT] CP2104 detected - 
+[2025-10-14 14:50:22.076] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:22.119] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:22.128] [CONNECT] CP2104 detected - 
+[2025-10-14 14:50:22.360] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:22.403] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:22.412] [CONNECT] CP2104 detected - 
+[2025-10-14 14:50:22.644] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:22.687] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:22.696] [CONNECT] CP2104 detected - 
+[2025-10-14 14:50:22.930] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:22.973] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:22.982] [CONNECT] CP2104 detected - 
+[2025-10-14 14:50:23.214] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:23.256] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:23.265] [CONNECT] CP2104 detected - 
+[2025-10-14 14:50:23.497] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:23.540] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:23.589] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:23.822] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:23.864] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:23.911] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:24.144] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:24.189] [INFO]   TTY device added: /dev/ttyUSB0
+[2025-10-14 14:50:24.237] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:24.470] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:24.522] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:24.756] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:24.808] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:25.041] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:25.092] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:25.326] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:25.378] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:25.611] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:25.663] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:25.897] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:25.947] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:26.179] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:26.228] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:26.461] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:26.512] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:26.746] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:26.798] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:27.031] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:27.079] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:27.312] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:27.360] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:27.593] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:27.644] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:27.877] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:27.928] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:28.160] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:28.209] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:28.442] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:28.494] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:28.727] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:28.780] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:29.012] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:29.063] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:29.297] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:29.349] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:29.583] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:29.632] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:29.865] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:29.919] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:30.151] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:30.197] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:30.429] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:30.482] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:30.715] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:30.767] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:31.001] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:31.048] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:31.280] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:31.326] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:31.559] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:31.612] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:31.846] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:31.897] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:32.131] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:32.182] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:32.416] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:32.464] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:32.698] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:32.750] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:32.984] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:33.036] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:33.269] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:33.322] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:33.555] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:33.608] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:33.841] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:33.890] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:34.123] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:34.174] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:34.407] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:34.460] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:34.693] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:34.745] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:34.978] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:35.029] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:35.262] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 14:50:35.313] [CONNECT] CP2104 detected - Product: CP2104 USB to UART Bridge Controller, Serial: 02DEE709, Manufacturer: Silicon Labs, Bus 2 Device 10
+[2025-10-14 14:50:35.546] [INFO]   TTY device created: /dev/ttyUSB0
+[2025-10-14 15:11:47.558] [INFO]   TTY device removed: /dev/ttyUSB0
+[2025-10-14 15:11:47.599] [INFO]   TTY device removed: /dev/ttyUSB0
+[2025-10-14 15:11:47.640] [INFO]   TTY device removed: /dev/ttyUSB0
+[2025-10-14 15:11:47.679] [INFO]   TTY device removed: /dev/ttyUSB0
+[2025-10-14 15:11:47.720] [INFO]   TTY device removed: /dev/ttyUSB0
+[2025-10-14 15:11:47.761] [INFO]   TTY device removed: /dev/ttyUSB0
+[2025-10-14 15:11:47.801] [INFO]   TTY device removed: /dev/ttyUSB0
+[2025-10-14 15:11:47.841] [INFO]   TTY device removed: /dev/ttyUSB0
+[2025-10-14 15:11:47.881] [INFO]   TTY device removed: /dev/ttyUSB0
+[2025-10-14 15:11:47.922] [INFO]   TTY device removed: /dev/ttyUSB0
+[2025-10-14 15:11:47.962] [INFO]   TTY device removed: /dev/ttyUSB0
+[2025-10-14 15:11:47.970] [DISCONNECT] CP2104 removed - 
+[2025-10-14 15:11:48.010] [INFO]   TTY device removed: /dev/ttyUSB0
+[2025-10-14 15:11:48.019] [DISCONNECT] CP2104 removed - 
+[2025-10-14 15:11:48.059] [INFO]   TTY device removed: /dev/ttyUSB0
+[2025-10-14 15:11:48.067] [DISCONNECT] CP2104 removed - 
+[2025-10-14 15:11:48.114] [INFO]   TTY device removed: /dev/ttyUSB0
+[2025-10-14 15:11:48.122] [DISCONNECT] CP2104 removed - 
+[2025-10-14 15:11:48.168] [INFO]   TTY device removed: /dev/ttyUSB0
+[2025-10-14 15:11:48.176] [DISCONNECT] CP2104 removed - 
+[2025-10-14 15:11:48.217] [INFO]   TTY device removed: /dev/ttyUSB0
+[2025-10-14 15:11:48.225] [DISCONNECT] CP2104 removed - 
+[2025-10-14 15:11:48.271] [INFO]   TTY device removed: /dev/ttyUSB0
+[2025-10-14 15:11:48.279] [DISCONNECT] CP2104 removed - 
+[2025-10-14 15:11:48.319] [INFO]   TTY device removed: /dev/ttyUSB0
+[2025-10-14 15:11:48.328] [DISCONNECT] CP2104 removed - 
+[2025-10-14 15:11:48.373] [INFO]   TTY device removed: /dev/ttyUSB0
+[2025-10-14 15:11:48.382] [DISCONNECT] CP2104 removed - 
+[2025-10-14 15:11:48.421] [INFO]   TTY device removed: /dev/ttyUSB0
+[2025-10-14 15:11:48.430] [DISCONNECT] CP2104 removed - 
+[2025-10-14 15:11:48.470] [INFO]   TTY device removed: /dev/ttyUSB0
+[2025-10-14 15:11:48.478] [DISCONNECT] CP2104 removed - 
+[2025-10-14 15:11:48.522] [INFO]   TTY device removed: /dev/ttyUSB0
+[2025-10-14 15:11:48.531] [DISCONNECT] CP2104 removed - 
+[2025-10-14 15:11:48.576] [INFO]   TTY device removed: /dev/ttyUSB0
+[2025-10-14 15:11:48.585] [DISCONNECT] CP2104 removed - 
+[2025-10-14 15:11:48.626] [INFO]   TTY device removed: /dev/ttyUSB0
+[2025-10-14 15:11:48.634] [DISCONNECT] CP2104 removed - 
+[2025-10-14 15:11:48.679] [INFO]   TTY device removed: /dev/ttyUSB0
+[2025-10-14 15:11:48.688] [DISCONNECT] CP2104 removed - 
+[2025-10-14 15:11:48.728] [INFO]   TTY device removed: /dev/ttyUSB0
+[2025-10-14 15:11:48.738] [DISCONNECT] CP2104 removed - 
+[2025-10-14 15:11:48.778] [INFO]   TTY device removed: /dev/ttyUSB0
+[2025-10-14 15:11:48.787] [DISCONNECT] CP2104 removed - 
+[2025-10-14 15:11:48.830] [INFO]   TTY device removed: /dev/ttyUSB0
+[2025-10-14 15:11:48.838] [DISCONNECT] CP2104 removed - 
+[2025-10-14 15:11:48.884] [INFO]   TTY device removed: /dev/ttyUSB0
+[2025-10-14 15:11:48.893] [DISCONNECT] CP2104 removed - 
+[2025-10-14 15:11:48.933] [INFO]   TTY device removed: /dev/ttyUSB0
+[2025-10-14 15:11:48.941] [DISCONNECT] CP2104 removed - 
+[2025-10-14 15:11:48.981] [INFO]   TTY device removed: /dev/ttyUSB0
+[2025-10-14 15:11:48.990] [DISCONNECT] CP2104 removed - 
+[2025-10-14 15:11:49.034] [INFO]   TTY device removed: /dev/ttyUSB0
+[2025-10-14 15:11:49.043] [DISCONNECT] CP2104 removed - 
+[2025-10-14 15:11:49.087] [INFO]   TTY device removed: /dev/ttyUSB0
+[2025-10-14 15:11:49.096] [DISCONNECT] CP2104 removed - 
+[2025-10-14 15:11:49.137] [INFO]   TTY device removed: /dev/ttyUSB0
+[2025-10-14 15:11:49.145] [DISCONNECT] CP2104 removed - 
+[2025-10-14 15:11:49.190] [INFO]   TTY device removed: /dev/ttyUSB0
+[2025-10-14 15:11:49.198] [DISCONNECT] CP2104 removed - 
+[2025-10-14 15:11:49.239] [INFO]   TTY device removed: /dev/ttyUSB0
+[2025-10-14 15:11:49.247] [DISCONNECT] CP2104 removed - 
+[2025-10-14 15:11:49.287] [INFO]   TTY device removed: /dev/ttyUSB0
+[2025-10-14 15:11:49.296] [DISCONNECT] CP2104 removed - 
+[2025-10-14 15:11:49.341] [INFO]   TTY device removed: /dev/ttyUSB0
+[2025-10-14 15:11:49.349] [DISCONNECT] CP2104 removed - 
+[2025-10-14 15:11:49.389] [INFO]   TTY device removed: /dev/ttyUSB0
+[2025-10-14 15:11:49.398] [DISCONNECT] CP2104 removed - 
+[2025-10-14 15:11:49.443] [INFO]   TTY device removed: /dev/ttyUSB0
+[2025-10-14 15:11:49.451] [DISCONNECT] CP2104 removed - 
+[2025-10-14 15:11:49.491] [INFO]   TTY device removed: /dev/ttyUSB0
+[2025-10-14 15:11:49.500] [DISCONNECT] CP2104 removed - 
+[2025-10-14 15:11:49.544] [INFO]   TTY device removed: /dev/ttyUSB0
+[2025-10-14 15:11:49.553] [DISCONNECT] CP2104 removed - 
+[2025-10-14 15:11:49.593] [INFO]   TTY device removed: /dev/ttyUSB0
+[2025-10-14 15:11:49.601] [DISCONNECT] CP2104 removed - 
+[2025-10-14 15:11:49.646] [INFO]   TTY device removed: /dev/ttyUSB0
+[2025-10-14 15:11:49.655] [DISCONNECT] CP2104 removed - 
+[2025-10-14 15:11:49.695] [INFO]   TTY device removed: /dev/ttyUSB0
+[2025-10-14 15:11:49.703] [DISCONNECT] CP2104 removed - 
+[2025-10-14 15:11:49.748] [INFO]   TTY device removed: /dev/ttyUSB0
+[2025-10-14 15:11:49.757] [DISCONNECT] CP2104 removed - 
+[2025-10-14 15:11:49.797] [INFO]   TTY device removed: /dev/ttyUSB0
+[2025-10-14 15:11:49.806] [DISCONNECT] CP2104 removed - 
+[2025-10-14 15:11:49.850] [INFO]   TTY device removed: /dev/ttyUSB0
+[2025-10-14 15:11:49.859] [DISCONNECT] CP2104 removed - 
+[2025-10-14 15:11:49.898] [INFO]   TTY device removed: /dev/ttyUSB0
+[2025-10-14 15:11:49.907] [DISCONNECT] CP2104 removed - 
+[2025-10-14 15:11:49.953] [INFO]   TTY device removed: /dev/ttyUSB0
+[2025-10-14 15:11:49.962] [DISCONNECT] CP2104 removed - 
+[2025-10-14 15:11:50.001] [INFO]   TTY device removed: /dev/ttyUSB0
+[2025-10-14 15:11:50.010] [DISCONNECT] CP2104 removed - 
+[2025-10-14 15:11:50.056] [INFO]   TTY device removed: /dev/ttyUSB0
+[2025-10-14 15:11:50.064] [DISCONNECT] CP2104 removed - 
+[2025-10-14 15:11:50.104] [INFO]   TTY device removed: /dev/ttyUSB0
+[2025-10-14 15:12:56.203] [INFO] Monitoring stopped
+[2025-10-14 15:12:56.211] [INFO] Analyzing log for rapid connect/disconnect cycles...
+[2025-10-14 15:12:56.227] [WARNING] Rapid cycling detected: 24 events in recent history
+[2025-10-14 15:12:56.235] [WARNING] This indicates a hardware connection issue (loose connector, power problem, etc.)
+[2025-10-14 15:12:56.243] [INFO] Full log saved to: ./logs/cp2104_monitor_20251014_144641.log

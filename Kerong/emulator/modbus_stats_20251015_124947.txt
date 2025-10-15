@@ -1,0 +1,25 @@
+============================================================
+MODBUS RTU SLAVE EMULATOR - STATISTICS
+============================================================
+Runtime: 1.1 seconds
+
+REQUESTS:
+  Total Requests:     0
+  Valid Requests:     0
+  Invalid Requests:   0
+  Responses Sent:     0
+
+ERRORS:
+  CRC Errors:         0
+  Framing Errors:     0
+  Timeout Errors:     0
+  Unsupported Func:   0
+
+DATA TRANSFER:
+  Bytes Received:     0
+  Bytes Sent:         0
+
+PER-DEVICE REQUESTS:
+
+FUNCTION CODE USAGE:
+============================================================

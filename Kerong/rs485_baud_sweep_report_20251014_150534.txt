@@ -1,0 +1,51 @@
+RS485 ADAPTER BAUD RATE SWEEP TEST REPORT
+==================================================
+
+Test Start Time: 2025-10-14 15:05:34
+Test End Time: 2025-10-14 15:09:17
+Total Duration: 222.4 seconds
+Serial Port: COM5
+Timeout: 2.0s
+
+SUMMARY
+--------------------
+Baud Rates Tested: 9600, 19200, 38400, 57600, 115200
+Messages per Baud Rate: 100
+Total Messages Sent: 500
+Overall Success Rate: 100.0%
+
+Best Performing Baud Rate: 9600 bps (100.0% success, BER: 0.00e+00)
+Worst Performing Baud Rate: 0 bps (100.0% success, BER: 0.00e+00)
+
+DETAILED RESULTS
+--------------------
+
+Baud Rate: 9600 bps
+  Success Rate: 100.0% (100/100)
+  Bit Error Rate: 0.00e+00
+  Timeout Errors: 0
+  Average Response Time: 0.439s
+
+Baud Rate: 19200 bps
+  Success Rate: 100.0% (100/100)
+  Bit Error Rate: 0.00e+00
+  Timeout Errors: 0
+  Average Response Time: 0.429s
+
+Baud Rate: 38400 bps
+  Success Rate: 100.0% (100/100)
+  Bit Error Rate: 0.00e+00
+  Timeout Errors: 0
+  Average Response Time: 0.419s
+
+Baud Rate: 57600 bps
+  Success Rate: 100.0% (100/100)
+  Bit Error Rate: 0.00e+00
+  Timeout Errors: 0
+  Average Response Time: 0.418s
+
+Baud Rate: 115200 bps
+  Success Rate: 100.0% (100/100)
+  Bit Error Rate: 0.00e+00
+  Timeout Errors: 0
+  Average Response Time: 0.409s
